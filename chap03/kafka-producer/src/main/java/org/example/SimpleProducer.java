@@ -15,7 +15,7 @@ public class SimpleProducer {
     private final static String TOPIC_NAME = "test";
     private final static String BOOTSTRAP_SERVERS = "kafka1:9092,kafka2:9092,kafka3:9092";
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final Properties configs = new Properties();
         configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
