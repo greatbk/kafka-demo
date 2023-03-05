@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="producer" default="execute">
+    <description>KAFKA Producer Example</description>
+
+    <target name="compile">
+        <exec executable="mvn">
+            <arg value="clean" />
+            <arg value="compile" />
+            <arg value="dependency:copy-dependencies" />
+        </exec>
+    </target>
+
+    <target name="execute" depends="compile">
+        <exec executable="java">
+            <arg value="-cp" />
+            <arg value="target/classes:target/dependency/*" />
+            <arg value="org.example.producer.SimpleProducer" />
+        </exec>
+    </target>
+</project>
